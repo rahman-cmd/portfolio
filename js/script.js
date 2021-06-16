@@ -97,4 +97,17 @@ function portfolioItemDetails(portfolioItem) {
         portfolioItem.querySelector(".portfolio-item-details").innerHTML;
 }
 
+// type js
+const typed = new Typed('.typejs', {
+    strings: ['Frontend Web Developer', 
+    'Graphic Designer',
+    'Penetration Tester',
+    'Android App Developer'
+        ],
+        typeSpeed: 40,
+        backSpeed: 40,
+        backDelay: 1500,
+        loop: true,
+  });
+
 
