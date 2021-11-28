@@ -1,12 +1,12 @@
 
-window.addEventListener("load", () =>{
+window.addEventListener("load", () => {
     document.querySelector(".main").classList.remove("hidden");
     document.querySelector(".home-section").classList.add("active");
     /*--------------- Page Loader ---------------*/
     document.querySelector(".page-loader").classList.add("fade-out");
-    setTimeout(()=>{
+    setTimeout(() => {
         document.querySelector(".page-loader").style.display = "none";
-    },600);
+    }, 600);
 
 });
 
@@ -99,15 +99,30 @@ function portfolioItemDetails(portfolioItem) {
 
 // type js
 const typed = new Typed('.typejs', {
-    strings: ['Frontend Web Developer', 
-    'Graphic Designer',
-    'Penetration Tester',
-    'Android App Developer'
-        ],
-        typeSpeed: 40,
-        backSpeed: 40,
-        backDelay: 1500,
-        loop: true,
-  });
+    strings: ['Frontend Web Developer',
+        'Graphic Designer',
+        'Penetration Tester',
+        'Android App Developer'
+    ],
+    typeSpeed: 40,
+    backSpeed: 40,
+    backDelay: 1500,
+    loop: true,
+});
 
+// send email
+function send() {
+    emailjs.send("service_7ge8tff", "template_3drj6iq", {
+        from_name: document.querySelector("#fromName").value,
+        to_name: document.querySelector("#to_name").value,
+        message: document.querySelector("#msg").value,
+        email_to: document.querySelector("#email_to").value,
+    }).then(res => {
+        console.log("Email successfully sent!");
+        alert("Email successfully sent!");
+    }, err => {
+        alert("Email failed to send");
+    });
+
+}
 
